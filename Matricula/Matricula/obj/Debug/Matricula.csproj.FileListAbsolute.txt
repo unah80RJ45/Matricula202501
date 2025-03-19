@@ -1,0 +1,20 @@
+C:\Users\guill\OneDrive - Universidad Nacional Autónoma de Honduras\UNAHVS\Proyectos\DB2\DB2202501\Matricula\Matricula\Matricula\bin\Debug\Matricula.exe.config
+C:\Users\guill\OneDrive - Universidad Nacional Autónoma de Honduras\UNAHVS\Proyectos\DB2\DB2202501\Matricula\Matricula\Matricula\bin\Debug\Matricula.exe
+C:\Users\guill\OneDrive - Universidad Nacional Autónoma de Honduras\UNAHVS\Proyectos\DB2\DB2202501\Matricula\Matricula\Matricula\bin\Debug\Matricula.pdb
+C:\Users\guill\OneDrive - Universidad Nacional Autónoma de Honduras\UNAHVS\Proyectos\DB2\DB2202501\Matricula\Matricula\Matricula\obj\Debug\Matricula.csprojAssemblyReference.cache
+C:\Users\guill\OneDrive - Universidad Nacional Autónoma de Honduras\UNAHVS\Proyectos\DB2\DB2202501\Matricula\Matricula\Matricula\obj\Debug\Matricula.Form1.resources
+C:\Users\guill\OneDrive - Universidad Nacional Autónoma de Honduras\UNAHVS\Proyectos\DB2\DB2202501\Matricula\Matricula\Matricula\obj\Debug\Matricula.Properties.Resources.resources
+C:\Users\guill\OneDrive - Universidad Nacional Autónoma de Honduras\UNAHVS\Proyectos\DB2\DB2202501\Matricula\Matricula\Matricula\obj\Debug\Matricula.csproj.GenerateResource.cache
+C:\Users\guill\OneDrive - Universidad Nacional Autónoma de Honduras\UNAHVS\Proyectos\DB2\DB2202501\Matricula\Matricula\Matricula\obj\Debug\Matricula.csproj.CoreCompileInputs.cache
+C:\Users\guill\OneDrive - Universidad Nacional Autónoma de Honduras\UNAHVS\Proyectos\DB2\DB2202501\Matricula\Matricula\Matricula\obj\Debug\Matricula.exe
+C:\Users\guill\OneDrive - Universidad Nacional Autónoma de Honduras\UNAHVS\Proyectos\DB2\DB2202501\Matricula\Matricula\Matricula\obj\Debug\Matricula.pdb
+C:\Dev\UNAH\DB2202501\Matricula\Matricula\bin\Debug\Matricula.exe.config
+C:\Dev\UNAH\DB2202501\Matricula\Matricula\bin\Debug\Matricula.exe
+C:\Dev\UNAH\DB2202501\Matricula\Matricula\bin\Debug\Matricula.pdb
+C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.csprojAssemblyReference.cache
+C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.Form1.resources
+C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.Properties.Resources.resources
+C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.csproj.GenerateResource.cache
+C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.csproj.CoreCompileInputs.cache
+C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.exe
+C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.pdb
