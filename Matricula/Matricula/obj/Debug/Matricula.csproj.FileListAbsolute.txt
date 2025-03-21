@@ -18,3 +18,4 @@ C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.csproj.GenerateRes
 C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.csproj.CoreCompileInputs.cache
 C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.exe
 C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.pdb
+C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.Forms.frmMaestro.resources
