@@ -14,8 +14,8 @@ namespace Matricula.Forms
     public partial class frmMaestro : Form
     {
         SqlConnection cnx;
-        SqlDataAdapter adpMaestro;
-        DataTable tabMaestro;
+        SqlDataAdapter adpMaestro; SqlDataAdapter adpProfesion;
+        DataTable tabMaestro; DataTable tabProfesion; DataTable tabSexo; 
 
         public frmMaestro()
         {
@@ -42,6 +42,7 @@ namespace Matricula.Forms
             adpMaestro.InsertCommand.Parameters.Add("@tel", SqlDbType.VarChar, 20, "telefono");
             adpMaestro.InsertCommand.Parameters.Add("@dir", SqlDbType.VarChar, 100, "Direccion");
             adpMaestro.InsertCommand.Parameters.Add("@pro", SqlDbType.Int, 4, "ProfesionID");
+            adpMaestro.InsertCommand.Parameters["@mae"].Direction = ParameterDirection.InputOutput;
 
             adpMaestro.UpdateCommand = new SqlCommand("spMaestroUpdate", cnx);
             adpMaestro.UpdateCommand.CommandType = CommandType.StoredProcedure;
@@ -62,9 +63,47 @@ namespace Matricula.Forms
 
         private void frmMaestro_Load(object sender, EventArgs e)
         {
+            // cargar el datagridview
             tabMaestro = new DataTable();
             adpMaestro.Fill(tabMaestro);
             dataGridView1.DataSource = tabMaestro;
+
+            // cargar combox dentro del datagridview
+            adpProfesion = new SqlDataAdapter("spSelectProfesion 0", cnx);
+            tabProfesion = new DataTable();
+            adpProfesion.Fill(tabProfesion);
+            DataGridViewComboBoxColumn cmbProfesion = new DataGridViewComboBoxColumn();
+            cmbProfesion.DataSource = tabProfesion;
+            cmbProfesion.DisplayMember = "Nombre";
+            cmbProfesion.ValueMember = "ProfesionID";
+            cmbProfesion.DataPropertyName = "ProfesionID";
+            cmbProfesion.HeaderText = "Profesion";
+            cmbProfesion.DisplayStyleForCurrentCellOnly = true;
+            dataGridView1.Columns.Add(cmbProfesion);
+            
+            // Cargar Estado Civil
+            DataTable tabCivil = new DataTable();
+            tabCivil.Columns.Add("Codigo"); tabCivil.Columns.Add("Nombre");
+            DataRow nRow = tabCivil.NewRow();
+            nRow[0] = "C"; nRow[1] = "Casado";
+            //DataRow sRow = tabCivil.NewRow();
+            //nRow[0] = "S"; nRow[1] = "Soltero";
+
+            tabCivil.Rows.Add(nRow);
+            //tabCivil.Rows.Add(sRow);
+
+            DataGridViewComboBoxColumn cmdCivil = new DataGridViewComboBoxColumn();
+            cmdCivil.DataSource = tabCivil;
+            cmdCivil.DisplayMember = "Nombre";
+            cmdCivil.ValueMember = "Codigo";
+            cmdCivil.DataPropertyName = "Civil";
+            cmdCivil.HeaderText = "EstadoCivil";
+            cmdCivil.DisplayStyleForCurrentCellOnly = true;
+            dataGridView1.Columns.Add(cmdCivil);
+
+            dataGridView1.Columns["ProfesionID"].Visible = false;
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Silver;
         }
 
         private void cmdSalvar_Click(object sender, EventArgs e)
