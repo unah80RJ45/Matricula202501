@@ -19,3 +19,5 @@ C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.csproj.CoreCompile
 C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.exe
 C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.pdb
 C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.Forms.frmMaestro.resources
+C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.Forms.frmLogin.resources
+C:\Dev\UNAH\DB2202501\Matricula\Matricula\obj\Debug\Matricula.Forms.frmMain.resources

@@ -16,7 +16,7 @@ namespace Matricula
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.frmMaestro());
+            Application.Run(new Forms.frmMain());
         }
     }
 }
