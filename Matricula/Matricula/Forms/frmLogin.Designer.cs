@@ -55,6 +55,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(210, 26);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.Text = "db2";
             // 
             // txtPassword
             // 
@@ -63,6 +64,7 @@
             this.txtPassword.PasswordChar = '+';
             this.txtPassword.Size = new System.Drawing.Size(210, 26);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.Text = "123";
             // 
             // label2
             // 
@@ -79,6 +81,7 @@
             this.txtBase.Name = "txtBase";
             this.txtBase.Size = new System.Drawing.Size(210, 26);
             this.txtBase.TabIndex = 5;
+            this.txtBase.Text = "Matricula202501";
             // 
             // label3
             // 
@@ -95,6 +98,7 @@
             this.txtServidor.Name = "txtServidor";
             this.txtServidor.Size = new System.Drawing.Size(210, 26);
             this.txtServidor.TabIndex = 7;
+            this.txtServidor.Text = "3.128.144.165";
             // 
             // label4
             // 

@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Matricula.Forms
 {
     public partial class frmMain : Form
     {
         private int childFormNumber = 0;
+        private SqlConnection miConexion;
 
         public frmMain()
         {
@@ -110,8 +112,17 @@ namespace Matricula.Forms
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
 
-            if (!frm.isConectado )
+            if (!frm.isConectado)
                 Close();
+            else
+                miConexion = frm.Conexion;
+        }
+
+        private void maestroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMaestroLista frm = new frmMaestroLista(miConexion);
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }
