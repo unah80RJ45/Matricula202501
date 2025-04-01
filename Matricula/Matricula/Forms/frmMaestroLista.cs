@@ -73,8 +73,14 @@ namespace Matricula.Forms
 
         private void cmdModificar_Click(object sender, EventArgs e)
         {
-            int maestro = (int) tabMaestro.Rows[dataGridView1.CurrentRow.Index]["maestroid"];
+            int maestro = (int) tabMaestro.DefaultView[dataGridView1.CurrentRow.Index]["maestroid"];
             frmMaestroDetalle frm = new frmMaestroDetalle(conexion, maestro);
+            frm.ShowDialog();
+        }
+
+        private void cmdAdicionar_Click(object sender, EventArgs e)
+        {
+            frmMaestroDetalle frm = new frmMaestroDetalle(conexion, -1);
             frm.ShowDialog();
         }
     }
