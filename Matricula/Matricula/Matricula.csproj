@@ -82,6 +82,18 @@
     <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmSeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSeccion.Designer.cs">
+      <DependentUpon>frmSeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSeccionLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSeccionLista.Designer.cs">
+      <DependentUpon>frmSeccionLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Form1.resx">
@@ -101,6 +113,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSeccion.resx">
+      <DependentUpon>frmSeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSeccionLista.resx">
+      <DependentUpon>frmSeccionLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

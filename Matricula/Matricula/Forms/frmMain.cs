@@ -124,5 +124,12 @@ namespace Matricula.Forms
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void seccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSeccionLista frm = new frmSeccionLista(miConexion);
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
