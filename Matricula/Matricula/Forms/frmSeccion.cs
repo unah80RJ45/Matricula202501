@@ -18,6 +18,7 @@ namespace Matricula.Forms
         SqlDataAdapter adpSeccion;
         SqlDataAdapter adpClase;
         SqlConnection conexion;
+        SqlParameter prmSeccion;
 
         public frmSeccion(SqlConnection cnx, int seccion)
         {
@@ -39,10 +40,13 @@ namespace Matricula.Forms
             adpSeccion.InsertCommand.Parameters.Add("@aula", SqlDbType.Int, 4, "aula");
             adpSeccion.InsertCommand.Parameters.Add("@horario", SqlDbType.VarChar , 20, "Aula");
 
+            prmSeccion = new SqlParameter("@seccion", 0);
+
             adpClase = new SqlDataAdapter();
             adpClase.InsertCommand = new SqlCommand("spClaseInsert", cnx);
             adpClase.InsertCommand.CommandType = CommandType.StoredProcedure;
-            adpClase.InsertCommand.Parameters.Add("@seccion", SqlDbType.Int, 4, "SeccionID");
+//            adpClase.InsertCommand.Parameters.Add("@seccion", SqlDbType.Int, 4, "SeccionID");
+            adpClase.InsertCommand.Parameters.Add(prmSeccion);
             adpClase.InsertCommand.Parameters.Add("@alumno", SqlDbType.Int, 4, "AlumnoID");
             adpClase.InsertCommand.Parameters.Add("@nota", SqlDbType.Int, 4, "Nota");
 
@@ -56,11 +60,13 @@ namespace Matricula.Forms
             cmb.DataSource = tabla;
             cmb.DisplayMember = nombre;
             cmb.ValueMember = value;
+            cmb.SelectedIndex = -1;
+            cmb.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         private void frmSeccion_Load(object sender, EventArgs e)
         {
             try
-            {
+            {              
                 dsTablas = new DataSet();
                 adpTablas.Fill(dsTablas);
 
@@ -71,6 +77,10 @@ namespace Matricula.Forms
                 dsTablas.Tables[4].TableName = "Carrera";
 
                 dataGridView1.DataSource = dsTablas.Tables["Clase"];
+                dataGridView1.Columns["seccionid"].Visible = false;
+                dataGridView1.Columns["nombre"].ReadOnly = true;
+                dataGridView1.Columns["nombre"].Width = 250;
+
                 initCombo(cmbCarrera, dsTablas.Tables[4], "Nombre", "CarreraID");
                 initCombo(cmbMaestro, dsTablas.Tables[3], "Nombre", "MaestroID");
                 initCombo(cmbMateria, dsTablas.Tables["Materia"], "Nombre", "MateriaID");
@@ -83,11 +93,34 @@ namespace Matricula.Forms
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private bool setError(Control obj, String Mensaje)
+        {
+            bool ret = false;
 
+            errorProvider1.SetError(obj, Mensaje);
+
+            return ret;
+        }
         private void cmdSalvar_Click(object sender, EventArgs e)
         {
             try
             {
+                bool noError = true;
+
+                errorProvider1.Clear();
+                errorProvider1.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+
+                if (txtCodigo.Text.Length == 0) noError = setError(txtCodigo, "Falta el codigo");
+                if (cmbCarrera.SelectedIndex < 0) noError = setError(cmbCarrera, "Debe seleccionar la carrera");
+                if (cmbMaestro.SelectedIndex < 0) noError = setError(cmbMaestro, "Debe seleccionar el maestro");
+                if (cmbMateria.SelectedIndex < 0) noError = setError(cmbMateria, "Debe seleccionar la materia");
+                if (txtHorario.Text.Length == 0) noError = setError(txtHorario, "Falta el horario");
+                if (txtAula.Text.Length == 0) noError = setError(txtHorario, "Falta el aula");
+                if (dsTablas.Tables["Clase"].DefaultView.Count == 0) noError = setError(dataGridView1, "No ha especificado alumnos");
+
+                if (!noError)
+                    return;
+
                 dsTablas.Tables["Seccion"].Rows[0]["SeccionID"] = txtCodigo.Text;
                 dsTablas.Tables["Seccion"].Rows[0]["MateriaID"] = cmbMateria.SelectedValue;
                 dsTablas.Tables["Seccion"].Rows[0]["MaestroID"] = cmbMaestro.SelectedValue;
@@ -95,6 +128,7 @@ namespace Matricula.Forms
                 dsTablas.Tables["Seccion"].Rows[0]["Horario"] = txtHorario.Text;
                 dsTablas.Tables["Seccion"].Rows[0]["Aula"] = txtAula.Text;
 
+                prmSeccion.Value = txtCodigo.Text;
                 adpSeccion.Update(dsTablas.Tables["Seccion"]);
                 adpClase.Update(dsTablas.Tables["Clase"]);
 

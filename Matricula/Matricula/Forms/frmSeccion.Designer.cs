@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.cmbMateria = new System.Windows.Forms.ComboBox();
@@ -43,7 +44,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cmdSalvar = new System.Windows.Forms.Button();
             this.cmdCancelar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +62,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(159, 39);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(132, 22);
             this.txtCodigo.TabIndex = 1;
@@ -68,7 +71,7 @@
             // 
             this.cmbMateria.FormattingEnabled = true;
             this.cmbMateria.Location = new System.Drawing.Point(159, 81);
-            this.cmbMateria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbMateria.Margin = new System.Windows.Forms.Padding(4);
             this.cmbMateria.Name = "cmbMateria";
             this.cmbMateria.Size = new System.Drawing.Size(496, 24);
             this.cmbMateria.TabIndex = 2;
@@ -97,7 +100,7 @@
             // 
             this.cmbMaestro.FormattingEnabled = true;
             this.cmbMaestro.Location = new System.Drawing.Point(159, 124);
-            this.cmbMaestro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbMaestro.Margin = new System.Windows.Forms.Padding(4);
             this.cmbMaestro.Name = "cmbMaestro";
             this.cmbMaestro.Size = new System.Drawing.Size(496, 24);
             this.cmbMaestro.TabIndex = 4;
@@ -116,7 +119,7 @@
             // 
             this.cmbCarrera.FormattingEnabled = true;
             this.cmbCarrera.Location = new System.Drawing.Point(159, 167);
-            this.cmbCarrera.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCarrera.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCarrera.Name = "cmbCarrera";
             this.cmbCarrera.Size = new System.Drawing.Size(496, 24);
             this.cmbCarrera.TabIndex = 6;
@@ -124,7 +127,7 @@
             // txtHorario
             // 
             this.txtHorario.Location = new System.Drawing.Point(159, 210);
-            this.txtHorario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHorario.Margin = new System.Windows.Forms.Padding(4);
             this.txtHorario.Name = "txtHorario";
             this.txtHorario.Size = new System.Drawing.Size(132, 22);
             this.txtHorario.TabIndex = 9;
@@ -142,7 +145,7 @@
             // txtAula
             // 
             this.txtAula.Location = new System.Drawing.Point(523, 210);
-            this.txtAula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAula.Margin = new System.Windows.Forms.Padding(4);
             this.txtAula.Name = "txtAula";
             this.txtAula.Size = new System.Drawing.Size(132, 22);
             this.txtAula.TabIndex = 11;
@@ -161,7 +164,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(31, 255);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(980, 369);
             this.dataGridView1.TabIndex = 12;
@@ -170,7 +173,7 @@
             // cmdSalvar
             // 
             this.cmdSalvar.Location = new System.Drawing.Point(707, 81);
-            this.cmdSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdSalvar.Margin = new System.Windows.Forms.Padding(4);
             this.cmdSalvar.Name = "cmdSalvar";
             this.cmdSalvar.Size = new System.Drawing.Size(304, 71);
             this.cmdSalvar.TabIndex = 13;
@@ -181,18 +184,22 @@
             // cmdCancelar
             // 
             this.cmdCancelar.Location = new System.Drawing.Point(707, 154);
-            this.cmdCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(304, 71);
             this.cmdCancelar.TabIndex = 14;
             this.cmdCancelar.Text = "cmdCancelar";
             this.cmdCancelar.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmSeccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 639);
+            this.ClientSize = new System.Drawing.Size(1033, 639);
             this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.cmdSalvar);
             this.Controls.Add(this.dataGridView1);
@@ -209,13 +216,14 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSeccion";
             this.Text = "frmSeccion";
             this.Load += new System.EventHandler(this.frmSeccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +246,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button cmdSalvar;
         private System.Windows.Forms.Button cmdCancelar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
